@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Tharlon';
+    src: url(../fonts/tharlon.ttf);
+}
+
+@import './materialize';
+
+// VARS
+$header-bg: url(../img/pattern.png);
+$header-height: 300px;
+
+
+// Typography Color Functions
+@function set-text-color($color)
+{
+    @if(lightness($color) > 50)
+    {
+        @return #000000;
+    }
+    @else
+    {
+        @return #ffffff;
+    }
+}
+
+body
+{
+    background: $primary-color;
+    color: set-text-color($primary-color);
+}
+
+.mm_unicode
+{
+    font-family: tharlon;
+}
+
+.main-header
+{
+    background: $header-bg;
+    color: #fff;
+    height: $header-height;
+    margin-bottom: 30px;
+
+    h1
+    {
+        margin: 0;
+        padding-top: 30px;
+    }
+}
+
+.img-content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+}
+
+.card-content
+{
+    color: $primary-color;
+}
+
+.page-footer
+{
+    background: $secondary-color;
+
+    .footer-copyright
+    {
+        background: $secondary-color-light;
+    }
+}
+
+.modal
+{
+    color: #333;
+}
